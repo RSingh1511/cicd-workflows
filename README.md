@@ -219,34 +219,7 @@ jobs:
 
 ---
 
-### **8️ Copyright Check Workflow**
-**Usage Example**
-```yaml
-name: Copyright Check CI
-
-on:
-  pull_request:
-  push:
-    branches:
-      - main
-
-jobs:
-  copyright-check:
-    uses: eclipse-score/cicd-workflows/.github/workflows/copyright.yml@main
-    with:
-      bazel-target: "run //:copyright-check" # optional, this is the default
-```
-
-This workflow:  
-✅ Runs a **Bazel-based copyright**
-✅ Ensures all source files have **Eclipse Foundation** headers
-
-> ℹ️ **Note:** You can override the Bazel command using the `bazel-target` input.  
-> **Default:** `run //:copyright-check`
-
----
-
-### **9️ Formatting Check Workflow**
+### **8️⃣ Formatting Check Workflow**
 **Usage Example**
 ```yaml
 name: Formatting Check CI
@@ -270,6 +243,33 @@ This workflow:
 
 > ℹ️ **Note:** You can override the Bazel command using the `bazel-target` input.  
 > **Default:** `test //:format.check`
+
+---
+
+### **9️⃣ Copyright Check Workflow**
+**Usage Example**
+```yaml
+name: Copyright Check CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  copyright-check:
+    uses: eclipse-score/cicd-workflows/.github/workflows/copyright.yml@main
+    with:
+      bazel-target: "run //:copyright-check" # optional, this is the default
+```
+
+This workflow:  
+✅ Runs a **Bazel-based copyright**
+✅ Ensures all source files have **Eclipse Foundation** headers
+
+> ℹ️ **Note:** You can override the Bazel command using the `bazel-target` input.  
+> **Default:** `run //:copyright-check`
 
 ---
 ### **10️ Required Approvals Workflow**
